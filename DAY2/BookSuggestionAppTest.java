@@ -68,7 +68,7 @@ public class BookSuggestionAppTest{
     
     
      @Test
-    public void testToDisplayAllBooksAvailableInTheStore(){
+     public void testToDisplayAllBooksAvailableInTheStore(){
 
         BookSuggestionApp.bookStore.clear();
         String title = "Little jimmy";
@@ -79,6 +79,16 @@ public class BookSuggestionAppTest{
         String actual = BookSuggestionApp.showBook();
         assertEquals(expected, actual);
     }
+    
+    
+    @Test
+     public void testToCheckThatTheAppPicksARandomBook(){
+     String book = "Rich Dad, poor Dad";
+     BookSuggestionApp.bookStore.add(book.toLowerCase());
+     BookSuggestionApp.bookCollection record = BookSuggestionApp.randomSuggestion();
+     assertEquals(book, record.randomBook());
+     assertTrue(record.page() > 0);
+        }
     
     
     

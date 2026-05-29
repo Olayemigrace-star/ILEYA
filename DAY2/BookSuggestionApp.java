@@ -74,6 +74,22 @@ String newbook = scanner.nextLine();
       return names.toString();      
     }
     
+    
+    public record bookCollection(String book, int number){}
+    public static bookCollection randomSuggestion(){
+    
+    Random num = new Random();
+    int random = num.nextInt(0, bookStore.size());
+    int page = num.nextInt(1, 101);
+    String randomBook = bookStore.get(random);
+    
+    return new bookCollection(randomBook, page);
+     
+    }
+    
+   
+    
+    
     }
     
     
