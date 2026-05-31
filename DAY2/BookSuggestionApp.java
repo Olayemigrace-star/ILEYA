@@ -25,34 +25,60 @@ public class BookSuggestionApp{
                               """);
                 System.out.print("Enter Operation: ");
                 int task = scanner.nextInt();
+                
+                scanner.nextLine();
                 switch(task){
                 
                     case 1:
                         BookCollection suggestions = randomSuggestion();
                         System.out.print("Book for the day");
-                        System.out.print("Book Tittle: ");
+                        System.out.print("Book Title: ");
                         System.out.print(suggestions.randomBook());
+                        System.out.println(suggestions.page());
+                        System.out.println();
+                        break;
                         
                     case 2:
                         
-                        System.out.print("Enter the book tittle");
-                        String bookTittle = scanner.nextLine();
-                        System.out.print(bookStore.addBook());
+                        System.out.print("Enter the book title: ");
+                        String bookTitle = scanner.nextLine();
+                        System.out.println(addBook(bookTitle));
+                        System.out.println();
+                        break;
+                        
+                     case 3:
+                        
+                        System.out.print("Enter the book title to remove: ");
+                        String removeTitle = scanner.nextLine();
+                        System.out.println(removeBook(removeTitle));
+                        System.out.println();
+                        break;
+                      
+                       case 4:
+                        
+                        System.out.print("Enter the old title: ");
+                        String oldbook = scanner.nextLine();
+                        System.out.print("Enter the new title: ");
+                        String updateTitle = scanner.nextLine();
+                        System.out.println(updateBook(oldbook, updateTitle));
+                        System.out.println();
+                        break;
                     
+                      
+                        case 5:
+                        
+                        System.out.println("All books: ");
+                        System.out.println(showBook());
+                        System.out.println();
+                        break;
                 
                 }
-                if (task == 4){
-                System.out.print("Enter The Old Tittle Of The Book: ");
                 
-
-                System.out.print("Enter New Tittle Of The Book: ");
-                String newbook = scanner.nextLine();
-
 
         
         }
     
-    }
+    
 
 }
     
@@ -93,7 +119,7 @@ public static ArrayList<String> bookStore = new ArrayList<>();
     StringBuilder names = new StringBuilder();
        int value = 0;
             for(int index = 0; index < bookStore.size(); index++){
-                names.append((index + 1) + ". " + bookStore.get(index));
+                names.append((index + 1) + ". " + bookStore.get(index) + "\n");
             }
       return names.toString();      
     }
@@ -112,9 +138,9 @@ public static ArrayList<String> bookStore = new ArrayList<>();
     }
     
    
-    
-    
     }
+    
+    
     
     
     
