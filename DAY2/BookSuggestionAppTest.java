@@ -83,12 +83,14 @@ public class BookSuggestionAppTest{
     
     @Test
      public void testToCheckThatTheAppPicksARandomBook(){
-     String book = "Rich Dad, poor Dad";
-     BookSuggestionApp.bookStore.add(book.toLowerCase());
-     BookSuggestionApp.bookCollection record = BookSuggestionApp.randomSuggestion();
-     assertEquals(book, record.randomBook());
-     assertTrue(record.page() > 0);
-        }
+         BookSuggestionApp.bookStore.clear();
+         String book = "rich dad, poor dad";
+         BookSuggestionApp.bookStore.add(book.toLowerCase());
+         BookSuggestionApp.BookCollection record = BookSuggestionApp.randomSuggestion();
+         assertEquals(book, record.randomBook());
+         assertTrue(record.page() > 0);
+         
+     }
     
     
     
