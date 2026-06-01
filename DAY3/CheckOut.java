@@ -43,15 +43,15 @@ public class CheckOut{
 
 
     System.out.printf("SEMICOLON STORES%nMAIN BRANCH%nLOCATION: 312, HERBERT MACAULAY WAY, SABO YABO, LAGOS.%nTEL: 03293828343%nDate : 18-Dec-22 8:48:11 pm%nCashier: %s %nCustomer's Name: %s%n%n", cashiersName,customer);
-    System.out.printf("  =======================================================================%n");
-    System.out.printf("%-15s%-14s%-14s%-14s%-14s%n","","ITEM", "QTY", "PRICE", "TOTAL(NGN)");
-    System.out.printf("  -----------------------------------------------------------------------%n");
+    System.out.println("  ==========================================================================");
+    System.out.println(" \t\tITEM\t\tQTY\t\tPRICE\t\tTOTAL(NGN)");
+    System.out.println(" ==========================================================================");
     for(int counter = 0; counter < productName.size(); counter++){
 
-        System.out.printf("%-15s%-14s%-14d%-14.2f%-14.2f%n", "", productName.get(counter), productUnit.get(counter), costPrice.get(counter), costPrice.get(counter) * productUnit.get(counter));
+        System.out.println("\t\t" + productName.get(counter) + "\t\t" + productUnit.get(counter) + "\t\t" + costPrice.get(counter) + "\t\t" + costPrice.get(counter) * productUnit.get(counter));
 
     }
-    System.out.printf("%n  -----------------------------------------------------------------------%n");
+    System.out.println("  =======================================================================");
     double total = 0;
     for(int counter = 0; counter < productName.size(); counter++){
 
